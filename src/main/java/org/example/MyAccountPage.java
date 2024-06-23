@@ -34,6 +34,14 @@ public class MyAccountPage extends BasePage{
         return new CategoryWomenPage();
     }
     /**
+     * Нажатие на категорию "Tops"
+     */
+    public CategoryTopsPage tabTops(){
+        $(By.xpath("//*[@id=\"ui-id-4\"]")).hover();
+        $(By.xpath("//*[@id=\"ui-id-9\"]")).click();
+        return new CategoryTopsPage();
+    }
+    /**
      * Ввод текстового запроса
      */
     public ResultQueryPage fullingSearchQuery(){

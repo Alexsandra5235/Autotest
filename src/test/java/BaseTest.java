@@ -16,6 +16,7 @@ abstract public class BaseTest {
     ResultQueryPage resultQueryPage = new ResultQueryPage();
     CheckoutPage checkoutPage = new CheckoutPage();
     SuccessPage successPage = new SuccessPage();
+    CategoryTopsPage categoryTopsPage = new CategoryTopsPage();
 
     public void SetUp(){
         WebDriverManager.chromedriver().setup();
