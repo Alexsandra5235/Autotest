@@ -25,6 +25,12 @@ public class CategoryTopsPage extends BasePage{
         $(By.xpath("//div[@data-role=\"content\"]//*[@option-id=\"49\"]")).click();
     }
     /**
+     * Нажатие кнопки для перехода на другую страницу
+     */
+    public void tabNextPage(){
+        $$(By.xpath("//div[@class=\"pages\"]//li[@class=\"item pages-item-next\"]/a")).last().click();
+    }
+    /**
      * Проверка правильности фильтровки товара
      */
     public boolean correctFiltering(){
@@ -37,5 +43,19 @@ public class CategoryTopsPage extends BasePage{
         List<String> list = Stream.concat(listSize.stream(),listColor.stream()).collect(Collectors.toList());
 
         return list.stream().allMatch(elem->elem.contains(constants.optionIdSizeXs) | elem.contains(constants.optionsIdColorBlack));
+    }
+    /**
+     * Проверка пагинации сайта
+     */
+    public int pagination(){
+        List<String> listOnePage = $$(By.xpath("//li[@class=\"item product product-item\"]//a[@class=\"product photo product-item-photo\"]"))
+                .asFixedIterable().stream().map(elem->elem.getAttribute("href")).toList();
+        tabNextPage();
+        List<String> listTwoPage = $$(By.xpath("//li[@class=\"item product product-item\"]//a[@class=\"product photo product-item-photo\"]"))
+                .asFixedIterable().stream().map(elem->elem.getAttribute("href")).toList();
+        List<String> list = Stream.concat(listOnePage.stream(),listTwoPage.stream()).collect(Collectors.toList());
+        int uniqueValues = list.stream().distinct().collect(Collectors.toList()).size();
+        return uniqueValues;
+
     }
 }
