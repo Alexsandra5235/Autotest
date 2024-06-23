@@ -1,10 +1,14 @@
-import org.example.Constants;
 import com.codeborne.selenide.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.example.*;
 import org.junit.jupiter.api.*;
 
 abstract public class BaseTest {
     Constants constants = new Constants();
+    MainPage mainPage = new MainPage();
+    CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage();
+    MyAccountPage myAccountPage = new MyAccountPage();
+    AccountInformationPage accountInformationPage = new AccountInformationPage();
 
     public void SetUp(){
         WebDriverManager.chromedriver().setup();
