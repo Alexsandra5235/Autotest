@@ -1,9 +1,6 @@
 package org.example;
 
 import org.openqa.selenium.By;
-
-import javax.smartcardio.Card;
-
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -35,6 +32,14 @@ public class CardProductPage extends BasePage{
     public void tabDeleteProduct(){
         $$(By.xpath("//div[@class=\"secondary\"]/a")).first().click();
         $(By.xpath("//footer[@class=\"modal-footer\"]/button[2]")).click();
+    }
+
+    /**
+     * Добавление товара в избранное
+     */
+    public WishListPage tabAddToWishList(){
+        $(By.xpath("//div[@data-role=\"add-to-links\"]/a[1]")).click();
+        return new WishListPage();
     }
     /**
      * Проверка сообщения об успешном добавлении товара в корзину
