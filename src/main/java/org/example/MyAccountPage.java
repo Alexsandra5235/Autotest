@@ -24,4 +24,10 @@ public class MyAccountPage extends BasePage{
         $$(By.xpath("//*[@class=\"box box-information\"]//a")).first().click();
         return new AccountInformationPage();
     }
+    /**
+     * Проверка отображения элементов страницы
+     */
+    public boolean visibleItemPage(){
+        return $$(By.xpath("//*[@class=\"box box-information\"]//a")).first().shouldBe(visible).isDisplayed();
+    }
 }

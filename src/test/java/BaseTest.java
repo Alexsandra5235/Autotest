@@ -9,6 +9,7 @@ abstract public class BaseTest {
     CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage();
     MyAccountPage myAccountPage = new MyAccountPage();
     AccountInformationPage accountInformationPage = new AccountInformationPage();
+    SignInPage signInPage = new SignInPage();
 
     public void SetUp(){
         WebDriverManager.chromedriver().setup();
