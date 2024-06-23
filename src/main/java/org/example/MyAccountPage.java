@@ -1,6 +1,8 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -30,6 +32,14 @@ public class MyAccountPage extends BasePage{
     public CategoryWomenPage tabWomen(){
         $(By.xpath("//*[@id=\"ui-id-4\"]")).click();
         return new CategoryWomenPage();
+    }
+    /**
+     * Ввод текстового запроса
+     */
+    public ResultQueryPage fullingSearchQuery(){
+        $(By.xpath("//*[@id=\"search\"]")).sendKeys(constants.searchQuery);
+        $(By.xpath("//*[@id=\"search\"]")).sendKeys(Keys.ENTER);
+        return new ResultQueryPage();
     }
     /**
      * Проверка отображения элементов страницы

@@ -13,6 +13,7 @@ abstract public class BaseTest {
     CategoryWomenPage categoryWomenPage = new CategoryWomenPage();
     CardProductPage cardProductPage = new CardProductPage();
     WishListPage wishListPage = new WishListPage();
+    ResultQueryPage resultQueryPage = new ResultQueryPage();
 
     public void SetUp(){
         WebDriverManager.chromedriver().setup();
