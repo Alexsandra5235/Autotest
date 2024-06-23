@@ -25,4 +25,17 @@ public class AccountInformationPage extends BasePage{
         $(By.xpath("//*[@class=\"action save primary\"]")).click();
         return new SignInPage();
     }
+    /**
+     * Заполнение поля "Email"
+     */
+    public void fullingNewEmail(String email){
+        $(By.xpath("//*[@id=\"email\"]")).clear();
+        $(By.xpath("//*[@id=\"email\"]")).sendKeys(email);
+    }
+    /**
+     * Заполнение поля "Current Password"
+     */
+    public void fullingPassword(){
+        $(By.xpath("//*[@id=\"current-password\"]")).sendKeys(constants.password);
+    }
 }

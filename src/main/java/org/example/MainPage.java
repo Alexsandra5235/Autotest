@@ -26,6 +26,19 @@ public class MainPage {
         return new SignInPage();
     }
     /**
+     * Нажатие на кнопку открытия выпадающего списка перехода между страницами
+     */
+    public void tabDropDown(){
+        $$(By.xpath("//button[@class=\"action switch\"]")).first().click();
+    }
+    /**
+     * Нажатие на кнопку "My Account"
+     */
+    public MyAccountPage tabMyAccount(){
+        $$(By.xpath("//ul[@class=\"header links\"]/li/a")).first().click();
+        return new MyAccountPage();
+    }
+    /**
      * Проверка отображения элемента страницы
      */
     public boolean visibleItemPage(){

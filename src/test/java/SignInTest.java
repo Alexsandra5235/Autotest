@@ -10,7 +10,7 @@ public class SignInTest extends BaseTest{
     public void validParameters(){
         mainPage.tabSignIn();
 
-        signInPage.fullingEmail();
+        signInPage.fullingEmail(constants.authorizationEmail);
         signInPage.fullingPassword(constants.password);
         signInPage.tabSignIn();
 
@@ -34,7 +34,7 @@ public class SignInTest extends BaseTest{
     public void invalidPassword(){
         mainPage.tabSignIn();
 
-        signInPage.fullingEmail();
+        signInPage.fullingEmail(constants.authorizationEmail);
         signInPage.fullingPassword(constants.invalidPassword);
         signInPage.tabSignIn();
 

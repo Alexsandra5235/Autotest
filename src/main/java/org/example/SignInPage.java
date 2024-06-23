@@ -10,8 +10,8 @@ public class SignInPage extends BasePage{
     /**
      * Заполнение почты
      */
-    public void fullingEmail(){
-        $(By.xpath("//*[@id=\"email\"]")).sendKeys(constants.authorizationEmail);
+    public void fullingEmail(String email){
+        $(By.xpath("//*[@id=\"email\"]")).sendKeys(email);
     }
     /**
      * Заполненение пароля
@@ -38,5 +38,11 @@ public class SignInPage extends BasePage{
      */
     public boolean visibleMessengerInvalidPassword(){
         return $(By.xpath("//*[@id=\"maincontent\"]/ div[2]")).shouldBe(visible).isDisplayed();
+    }
+    /**
+     * Проверка сообщения об успешно измененной почте
+     */
+    public boolean visibleMessengerChangeEmail(){
+        return $(By.xpath("//div[@data-ui-id=\"message-success\"]")).shouldBe(visible).isDisplayed();
     }
 }
