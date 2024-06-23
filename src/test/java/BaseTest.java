@@ -10,6 +10,8 @@ abstract public class BaseTest {
     MyAccountPage myAccountPage = new MyAccountPage();
     AccountInformationPage accountInformationPage = new AccountInformationPage();
     SignInPage signInPage = new SignInPage();
+    CategoryWomenPage categoryWomenPage = new CategoryWomenPage();
+    CardProductPage cardProductPage = new CardProductPage();
 
     public void SetUp(){
         WebDriverManager.chromedriver().setup();

@@ -25,6 +25,13 @@ public class MyAccountPage extends BasePage{
         return new AccountInformationPage();
     }
     /**
+     * Нажатие на категорию "Women"
+     */
+    public CategoryWomenPage tabWomen(){
+        $(By.xpath("//*[@id=\"ui-id-4\"]")).click();
+        return new CategoryWomenPage();
+    }
+    /**
      * Проверка отображения элементов страницы
      */
     public boolean visibleItemPage(){
