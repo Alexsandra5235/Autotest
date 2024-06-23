@@ -19,5 +19,6 @@ public class Constants {
             numberFlat = "23",
             citi = "Moscow",
             zipCode = "567400",
-            numberPhone = "89123456789";
+            numberPhone = "89123456789",
+            state = "Russian Federation";
 }

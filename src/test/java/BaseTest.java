@@ -14,6 +14,8 @@ abstract public class BaseTest {
     CardProductPage cardProductPage = new CardProductPage();
     WishListPage wishListPage = new WishListPage();
     ResultQueryPage resultQueryPage = new ResultQueryPage();
+    CheckoutPage checkoutPage = new CheckoutPage();
+    SuccessPage successPage = new SuccessPage();
 
     public void SetUp(){
         WebDriverManager.chromedriver().setup();
