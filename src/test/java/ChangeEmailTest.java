@@ -10,7 +10,7 @@ public class ChangeEmailTest extends BaseTest{
     public void correctParameters(){
         mainPage.tabSignIn();
 
-        signInPage.fullingEmail(constants.newEmail);
+        signInPage.fullingEmail(constants.authorizationEmail);
         signInPage.fullingPassword(constants.password);
         signInPage.tabSignIn();
 
@@ -21,10 +21,10 @@ public class ChangeEmailTest extends BaseTest{
 
         accountInformationPage.tabCheckBoxChangeEmail();
         accountInformationPage.fullingNewEmail(constants.newEmail);
-        accountInformationPage.fullingPassword();
+        accountInformationPage.fullingCurrentPassword(constants.password);
         accountInformationPage.tabSave();
 
-        assertTrue(signInPage.visibleMessengerChangeEmail());
+        assertTrue(signInPage.visibleMessengerSuccessChange());
 
         //Меняем почту обратно
         signInPage.fullingEmail(constants.newEmail);
@@ -38,7 +38,7 @@ public class ChangeEmailTest extends BaseTest{
 
         accountInformationPage.tabCheckBoxChangeEmail();
         accountInformationPage.fullingNewEmail(constants.authorizationEmail);
-        accountInformationPage.fullingPassword();
+        accountInformationPage.fullingCurrentPassword(constants.password);
         accountInformationPage.tabSave();
     }
 }

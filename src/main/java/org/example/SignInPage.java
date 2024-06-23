@@ -42,7 +42,7 @@ public class SignInPage extends BasePage{
     /**
      * Проверка сообщения об успешно измененной почте
      */
-    public boolean visibleMessengerChangeEmail(){
+    public boolean visibleMessengerSuccessChange(){
         return $(By.xpath("//div[@data-ui-id=\"message-success\"]")).shouldBe(visible).isDisplayed();
     }
 }

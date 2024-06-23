@@ -1,9 +1,7 @@
 package org.example;
 
-import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -16,6 +14,12 @@ public class AccountInformationPage extends BasePage{
      */
     public void tabCheckBoxChangeEmail(){
         $(By.xpath("//*[@id=\"change-email\"]")).click();
+    }
+    /**
+     * Активайия чекбокса "Change Password"
+     */
+    public void tabCheckBoxChangePassword(){
+        $(By.xpath("//*[@id=\"change-password\"]")).click();
     }
 
     /**
@@ -35,7 +39,20 @@ public class AccountInformationPage extends BasePage{
     /**
      * Заполнение поля "Current Password"
      */
-    public void fullingPassword(){
-        $(By.xpath("//*[@id=\"current-password\"]")).sendKeys(constants.password);
+    public void fullingCurrentPassword(String currentPassword){
+        $(By.xpath("//*[@id=\"current-password\"]")).sendKeys(currentPassword);
+    }
+    /**
+     * Заполнение поля "New Password" и "ConfirmNewPassword"
+     */
+    public void fullingNewPassword(String newPassword){
+        $(By.xpath("//*[@id=\"password\"]")).sendKeys(newPassword);
+        $(By.xpath("//*[@id=\"password-confirmation\"]")).sendKeys(newPassword);
+    }
+    /**
+     * Проверка сообщения о не совпадении текущего пароля с введенным значением
+     */
+    public boolean visibleMessengerInvalidCurrentPassword(){
+        return $(By.xpath("//div[@data-ui-id=\"message-error\"]")).shouldBe(visible).isDisplayed();
     }
 }

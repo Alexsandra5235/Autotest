@@ -6,7 +6,7 @@ public class Constants {
             password = "Password56",
             firstName = "Иван",
             lastName = "Пупкин",
-            authorizationEmail ="sm999999@gmail.com",
+            authorizationEmail ="authorization@gmail.com",
             incorrectEmail = "Random56.text",
             invalidPassword = "Invalid56",
             newEmail = "new01@gmail.com",
