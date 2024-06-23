@@ -13,7 +13,7 @@ public class MyAccountPage extends BasePage{
      * Проверка появления сообщения об успешном создании аккаунта
      * @return
      */
-    public boolean checkMessengerSuccessCreateAccount(){
+    public boolean visibleMessengerSuccessCreateAccount(){
         return $(By.xpath("//*[@id=\"maincontent\"]/div[1]")).shouldBe(visible).isDisplayed();
     }
 
