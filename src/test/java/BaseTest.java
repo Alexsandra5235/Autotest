@@ -1,9 +1,12 @@
-import com.codeborne.selenide.*;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.example.*;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 abstract public class BaseTest {
+
     Constants constants = new Constants();
     MainPage mainPage = new MainPage();
     CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage();
